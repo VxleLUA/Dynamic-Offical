@@ -17,7 +17,5 @@ if placeIds[placeId] then
     -- Run the corresponding loadstring for the current place ID
     placeIds[placeId]()
 else
-    -- If the current place ID is not in the list, display an error message
-    local notif = Notification.new("error", "Error", "Place ID " .. placeId .. " is not supported.")
-    notif:deleteTimeout(5) -- Auto remove the notification after 5 seconds
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/System/Notifications/GameNotSupported.lua"))()
 end
