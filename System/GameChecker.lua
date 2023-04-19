@@ -1,51 +1,23 @@
--- Replace the placeholder with your own webhook URL
-local webhookUrl = "https://discordapp.com/api/webhooks/1098037089305624616/ifh60VhLASeqi2WNCqKPjjbpAfuvM519EvKlbEgMSI8theEikbV9bGrHM-7cK7it6pXz"
+-- Load the Notification GUI library
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
 
--- Get the local player
-local player = game.Players.LocalPlayer
-
--- Create an HTTP service object
-local httpService = game:GetService("HttpService")
-
--- Create a function to send the embed to the webhook
-local function sendEmbedToWebhook(embedData)
-    local json = httpService:JSONEncode({embeds = {embedData}})
-    local headers = {
-        ["Content-Type"] = "application/json"
-    }
-    local request = httpService:RequestAsync({
-        Url = webhookUrl,
-        Method = "POST",
-        Headers = headers,
-        Body = json
-    })
-end
-
--- Create the embed data
-local embedData = {
-    ["title"] = "New Execution!",
-    ["description"] = "Player info below",
-    ["color"] = tonumber("FFA500", 16), -- Hex color code, change as desired
-    ["fields"] = {
-        {
-            ["name"] = "Display Name",
-            ["value"] = player.DisplayName,
-            ["inline"] = true
-        },
-        {
-            ["name"] = "Username",
-            ["value"] = player.Name,
-            ["inline"] = true
-        }
-    },
-    ["thumbnail"] = {
-        ["url"] = "https://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&userId=" .. player.UserId
-    },
-    ["footer"] = {
-        ["text"] = "Dynamiq Systems"
-    },
-    ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%SZ", os.time()) -- Use UTC time
+-- Define the list of place IDs and their corresponding loadstrings
+local placeIds = {
+    [8260276694] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Orbit%20GUI"))()
+    end,
+    -- Add more place IDs and their loadstrings here
 }
 
--- Send the embed to the webhook
-sendEmbedToWebhook(embedData)
+-- Get the current game's place ID
+local placeId = game.PlaceId
+
+-- Check if the current place ID is in the list
+if placeIds[placeId] then
+    -- Run the corresponding loadstring for the current place ID
+    placeIds[placeId]()
+else
+    -- If the current place ID is not in the list, display an error message
+    local notif = Notification.new("error", "Error", "Place ID " .. placeId .. " is not supported.")
+    notif:deleteTimeout(5) -- Auto remove the notification after 5 seconds
+end
