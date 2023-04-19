@@ -4,7 +4,7 @@ local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/
 -- Define the list of place IDs and their corresponding loadstrings
 local placeIds = {
     [8260276694] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Orbit%20GUI"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Games/Ability-Wars.lua"))()
     end,
     -- Add more place IDs and their loadstrings here
 }
