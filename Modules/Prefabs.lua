@@ -1,20 +1,12 @@
 -- UI
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
--- Fetch the Discord link from a remote source
-local DiscordInvite = "https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Modules/DiscordInvite.lua" -- Update with the actual URL of your Discord link
-local DiscordContent = game:HttpGetAsync(DiscordInvite)
-local DiscordLink = loadstring(DiscordContent)()
+-- Fetch the systems
+local DiscordLink = loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Modules/DiscordInvite.lua", true))()
+local GlobalStoredScriptHwid = loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Modules/GlobalScriptHwid.lua", true))()
+local FileHwid = loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Modules/HwidFile.lua", true))()
 
--- Fetch the global key from a remote source
-local GlobalStoredScriptHwid = loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Modules/GlobalScriptHwid.lua"))()
-
--- Fetch the random file name from a remote source
-local HwidFileGen = "https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Modules/HwidFile.lua" -- Update with the actual URL of your file name generator script
-local GetContent = game:HttpGetAsync(HwidFileGen)
-local FileHwid = loadstring(GetContent)()
-
--- Create the Rayfield window
+-- Create the window
 local Window = Rayfield:CreateWindow({
    Name = "Dynamiq",
    LoadingTitle = "Loading...",
@@ -41,4 +33,4 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-local Tab = Window:CreateTab("Tab Example", 4483362458) -- Title, Image
+local Tab = Window:CreateTab("System Test", 4483362458) -- Title, Image
