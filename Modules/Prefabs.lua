@@ -2,7 +2,9 @@
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
 -- Fetch the systems
-local DiscordLink = loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Modules/DiscordInvite.lua", true))()
+local DiscordInvite = "https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Modules/DiscordInvite.lua"
+local DiscordContent = game:HttpGet(DiscordInvite)
+
 local GlobalStoredScriptHwid = loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Modules/GlobalScriptHwid.lua", true))()
 local FileHwid = loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Modules/HwidFile.lua", true))()
 
