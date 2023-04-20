@@ -1,19 +1,20 @@
+-- UI
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
--- For anyone looking this is to keep a global updated discord link.
-local DiscordInvite = "https://raw.githubusercontent.com/your-username/your-repo/main/DiscordLink.lua"
+-- Fetch the Discord link from a remote source
+local DiscordInvite = "https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Modules/DiscordInvite.lua" -- Update with the actual URL of your Discord link
 local DiscordContent = game:HttpGetAsync(DiscordInvite)
-local DiscordLink = loadstring(linkScriptContent)()
+local DiscordLink = loadstring(DiscordContent)()
 
--- Get global key.
+-- Fetch the global key from a remote source
+local GlobalStoredScriptHwid = loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Modules/GlobalScriptHwid.lua"))()
 
-local GlobalStoredScriptHwid = loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Modules/Key.lua"))()
-
--- For anyone looking through my scripts this is to randomize the names of each file so they dont override each config.
-local HwidFileGen = "hhttps://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Modules/HwidFile.lua"
-local linkScriptContent = game:HttpGetAsync(HwidFileGen)
+-- Fetch the random file name from a remote source
+local HwidFileGen = "https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Modules/HwidFile.lua" -- Update with the actual URL of your file name generator script
 local GetContent = game:HttpGetAsync(HwidFileGen)
 local FileHwid = loadstring(GetContent)()
 
+-- Create the Rayfield window
 local Window = Rayfield:CreateWindow({
    Name = "Dynamiq",
    LoadingTitle = "Loading...",
@@ -36,7 +37,7 @@ local Window = Rayfield:CreateWindow({
       FileName = "Key",
       SaveKey = false,
       GrabKeyFromSite = false,
-      Key = {GlobalStoredHwid}
+      Key = {GlobalStoredScriptHwid}
    }
 })
 
