@@ -6,7 +6,7 @@ local placeIds = {
     [8260276694] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Games/Ability-Wars.lua"))()
     end,
-    -- Add more place IDs and their loadstrings here
+    
 }
 
 -- Get the current game's place ID
