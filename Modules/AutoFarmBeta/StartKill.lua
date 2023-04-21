@@ -39,7 +39,7 @@ local function createHighlight(parent)
 end
 
 while true do
-    wait(0.01)
+    wait(0.1)
 
     local nearestPlayer = findNearestPlayer()
 
