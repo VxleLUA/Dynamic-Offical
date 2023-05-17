@@ -7,7 +7,7 @@ local placeIds = {
         loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Games/Ability-Wars.lua"))()
     end,
     [2866967438] = function()
-        
+        loadstring(game:HttpGet("https://lilcoderscripts.online/Scripts/ProFisher"))()
     end,
     
 }
