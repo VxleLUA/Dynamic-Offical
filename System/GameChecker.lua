@@ -21,5 +21,5 @@ if placeIds[placeId] then
     -- Run the corresponding loadstring for the current place ID
     placeIds[placeId]()
 else
-  loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/System/Notifications/GameNotSupported.lua"))()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/System/Globals/Universal.lua"))()
 end
