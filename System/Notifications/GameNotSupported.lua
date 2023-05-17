@@ -19,4 +19,4 @@ end
 local gameName = getGameName()
 
 -- Display a notification using the Notification-Library
-NotificationLibrary:SendNotification("Error", gameName .. " isn't supported.", 6)
+NotificationLibrary:SendNotification("Error", gameName .. " isn't supported loading universal.", 6)
