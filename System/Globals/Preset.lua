@@ -21,7 +21,7 @@ local Window = Rayfield:CreateWindow({
       Note = "Join the discord!",
       FileName = "Key",
       SaveKey = false,
-      GrabKeyFromSite = false,
+      GrabKeyFromSite = true,
       Key = {"https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/System/Globals/Key.lua"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
