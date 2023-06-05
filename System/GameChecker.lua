@@ -9,6 +9,9 @@ local placeIds = {
     [2866967438] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Games/FishingSimulator.lua"))()
     end,
+        [5326405001] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/Games/BaseBattles.lua"))()
+    end,
     
 }
 
